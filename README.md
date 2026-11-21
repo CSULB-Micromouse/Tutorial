@@ -1,3 +1,7 @@
+Follow along my youtube videos and make blink.c/blink.h & gpio.cpp/gpio.hpp
+
+If you get stuck, you can switch to answers branch which shows the completed code you're trying to make
+
 # First Time Setup 
 
 Clone repository
