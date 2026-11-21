@@ -35,7 +35,8 @@
 #include "uart.h"
 #include "timer(program breaks without this).h"
 #include "motor_driver.h"
-
+#include "gpio.hpp"
+#include "blink.h"
 
 /* Private function prototypes -----------------------------------------------*/
 void StartDefaultTask(void *argument);
@@ -94,10 +95,20 @@ int main(void)
 void StartDefaultTask(void *argument)
 {
   /* Infinite loop */
-
+  Enable_LED();
+  GPIO LED2(GPIOA,GPIO_PIN_2);
+  GPIO LED3(GPIOB,GPIO_PIN_4);
   while(1)
   {
+    LED_HIGH();
+    vTaskDelay(100);
+    LED_LOW();
+    vTaskDelay(100);
 
+    LED2.toggle();
+    vTaskDelay(100);
+
+    LED3.HIGH();
   }
 }
 
