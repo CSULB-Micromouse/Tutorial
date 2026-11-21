@@ -19,7 +19,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
-#include "gpio.hpp"
 #include "cmsis_os2.h"
 #include "stm32f4xx_hal_gpio.h"
 #include "FreeRTOS.h"
@@ -95,11 +94,10 @@ int main(void)
 void StartDefaultTask(void *argument)
 {
   /* Infinite loop */
-  GPIO LED(GPIOB,GPIO_PIN_13);
-  motor_init();
+
   while(1)
   {
-    motor_forward(100);
+
   }
 }
 
